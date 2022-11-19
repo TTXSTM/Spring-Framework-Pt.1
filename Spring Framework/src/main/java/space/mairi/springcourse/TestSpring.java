@@ -2,13 +2,23 @@ package space.mairi.springcourse;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.naming.Context;
+
 public class TestSpring {
+    // (en) Referencing a configuration file
+    // (ru) Обрашение к конфигурационному файлу
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
+        // (en) Getting Bean
+        // (ru) Получаем Bean
+        Music music = context.getBean("MusicBean", Music.class);
 
-        TestBean testBean = context.getBean("testBean", TestBean.class);
-        System.out.println(testBean.getName());
+        MusicPlayer musicPlayer = new MusicPlayer(music);
+
+        MusicPlayer.PlayMusic();
+
+        context.close();
     }
 }
