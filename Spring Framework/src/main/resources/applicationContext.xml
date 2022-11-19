@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="MusicBean"
-          class="space.mairi.springcourse.RockMusic">
+          class="space.mairi.springcourse.HipHopMusic">
     </bean>
 
 </beans>
