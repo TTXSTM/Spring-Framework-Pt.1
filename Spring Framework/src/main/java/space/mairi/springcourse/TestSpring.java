@@ -11,12 +11,13 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-        // (en) Getting Bean
-        // (ru) Получаем Bean
-        Music music = context.getBean("MusicBean", Music.class);
+            // (en) Getting Bean
+            // (ru) Получаем Bean
 
-        MusicPlayer musicPlayer = new MusicPlayer(music);
+        //Music music = context.getBean("MusicBean", Music.class);
+        //MusicPlayer musicPlayer = new MusicPlayer(music);
 
+        MusicPlayer musicPlayer = context.getBean("MusicPlayer", MusicPlayer.class);
         MusicPlayer.PlayMusic();
 
         context.close();
