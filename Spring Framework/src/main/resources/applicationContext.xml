@@ -23,7 +23,8 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="space.mairi.springcourse.MusicPlayer">
+          class="space.mairi.springcourse.MusicPlayer"
+          scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean="RapMusicBean"/>
