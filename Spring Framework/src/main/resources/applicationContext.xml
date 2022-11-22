@@ -9,13 +9,29 @@
 
     <context:property-placeholder location="classpath:MusicPlayer.properties"/>
 
-    <bean id="MusicBean"
+    <bean id="RapMusicBean"
           class="space.mairi.springcourse.RapMusic">
+    </bean>
+    <bean id="HipHopMusicBean"
+          class="space.mairi.springcourse.HipHopMusic">
+    </bean>
+    <bean id="ClassicalMusicBean"
+          class="space.mairi.springcourse.ClassicalMusic">
+    </bean>
+    <bean id="RockMusicBean"
+          class="space.mairi.springcourse.RockMusic">
     </bean>
 
     <bean id="MusicPlayer"
           class="space.mairi.springcourse.MusicPlayer">
-        <property name="music" ref="MusicBean"/>
+        <property name="musicList">
+            <list>
+                <ref bean="RapMusicBean"/>
+                <ref bean="HipHopMusicBean"/>
+                <ref bean="ClassicalMusicBean"/>
+                <ref bean="RockMusicBean"/>
+            </list>
+        </property>
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
