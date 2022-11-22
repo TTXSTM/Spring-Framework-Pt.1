@@ -1,7 +1,17 @@
 package space.mairi.springcourse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
-    private static Music music;
+    private static List<Music> musicList = new ArrayList<>();
+    public List<Music> getMusicList() {
+        return musicList;
+    }
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
+    }
 
     private String name;
     private int volume;
@@ -23,16 +33,15 @@ public class MusicPlayer {
     }
 
     // IoC
-    public MusicPlayer(Music music){
-        this.music = music;
+    public MusicPlayer(List<Music> musicList){
+        this.musicList = musicList;
     }
 
     public MusicPlayer(){}
 
-    public void setMusic(Music music){
-        this.music = music;
-    }
     public static void PlayMusic(){
-        System.out.println("Playing: " + music.getSong());
+        for(int i = 0; i < 4; i++){
+            System.out.println("Playing: " + musicList.get(i).getSong());
+        }
     }
 }
