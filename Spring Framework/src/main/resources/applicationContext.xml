@@ -22,7 +22,7 @@
           class="space.mairi.springcourse.RockMusic">
     </bean>
 
-    <bean id="MusicPlayer"
+    <bean id="musicPlayer"
           class="space.mairi.springcourse.MusicPlayer">
         <property name="musicList">
             <list>

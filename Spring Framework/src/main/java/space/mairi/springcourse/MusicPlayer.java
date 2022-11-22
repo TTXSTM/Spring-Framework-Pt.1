@@ -5,14 +5,6 @@ import java.util.List;
 
 public class MusicPlayer {
     private static List<Music> musicList = new ArrayList<>();
-    public List<Music> getMusicList() {
-        return musicList;
-    }
-
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
     private String name;
     private int volume;
 
@@ -32,16 +24,15 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    // IoC
-    public MusicPlayer(List<Music> musicList){
+    public void setMusicList(List<Music> musicList) {
         this.musicList = musicList;
     }
 
-    public MusicPlayer(){}
 
-    public static void PlayMusic(){
-        for(int i = 0; i < 4; i++){
-            System.out.println("Playing: " + musicList.get(i).getSong());
+    public static void PlayMusicList(){
+        for(Music music : musicList){
+            System.out.println("Playing: " + music.getSong());
+
         }
     }
 }
